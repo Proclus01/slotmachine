@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import SlotMachine from './SlotMachine';
 
 function App() {
+  // An RNG function to pass independent RNG values as props into each component
+  const rng = () => {
+    return Math.floor(Math.random() * 3) + 1;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Slot Machine!</h1>
+      <SlotMachine s1={rng()} s2={rng()} s3={rng()}/>
+      <SlotMachine s1={rng()} s2={rng()} s3={rng()}/>
+      <SlotMachine s1={rng()} s2={rng()} s3={rng()}/>
     </div>
   );
 }
